@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np
 
+# My computer/camera worked with 0 instead of 1 like on the example code so it may need to be switched back 
 cap = cv.VideoCapture(0)
 cv.namedWindow("Video")
 cv.namedWindow("absDiff")
@@ -37,7 +38,7 @@ while True:
     contours, hier = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
     for contour in contours:
-        if cv.contourArea(contour) < 300:
+        if cv.contourArea(contour) < 200:
             continue
         (x,y,w,h) = cv.boundingRect(contour)
         cv.rectangle(img, (x,y), (x+w, y+h), (255, 0, 0), 2)

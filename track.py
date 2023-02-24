@@ -26,6 +26,8 @@ def change_maxS(value):
 def change_maxV(value):
     max[2] = value
 
+
+# My computer/camera worked with 0 instead of 1 like on the example code so it may need to be switched back 
 cap = cv.VideoCapture(0)
 cv.namedWindow("Video")
 cv.namedWindow("hsv")
